@@ -1,20 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.Build.NoTargets/3.7.56"  DefaultTargets="Build">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <!-- GitVersion will automatically calculate and maintain the version of projects within your solution -->
-    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-
-    <ProjectReference Remove="$(SolutionDir)BuildMeFirst\BuildMeFirst.csproj" />
-  </ItemGroup>
 
   <Target Name="DoBeforeBuild" BeforeTargets="Build">
     <Message Text="I run first and only once $(ProjectFileName)" Importance="high" />

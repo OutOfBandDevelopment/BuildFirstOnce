@@ -28,13 +28,11 @@
     <None Include="@(LicenseFile)" Pack="true" PackagePath="\" />
   </ItemGroup>
 
-
   <ItemGroup>
     <ProjectReference Include="$(SolutionDir)BuildMeFirst\BuildMeFirst.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>
   </ItemGroup>
-
 
   <Target Name="DoBeforeBuild" BeforeTargets="Build">
     <Message Text="Run before everything else $(ProjectFileName)" Importance="high" />
@@ -43,6 +41,5 @@
   <Target Name="DoAfterBuild" AfterTargets="Build">
     <Message Text="Run after everything else $(ProjectFileName)" Importance="high" />
   </Target>
-
 
 </Project>
